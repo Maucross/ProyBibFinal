@@ -1,0 +1,36 @@
+@model List<Libro>
+@{
+    var libros = Model;
+}
+
+<h1>Listado de Libros</h1>
+
+<form asp-action="Libros" method="GET">
+    <input type="text" name="buscar" class="form-control" value="@ViewBag.buscar"><br>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+<br>
+<table class="table">
+    <tr>
+        <th>Codigo de Libro</th>
+        <th>ISBN</th>
+        <th>Categoria</th>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Editorial</th>
+        <th>Año de publicacion</th>
+    </tr>
+
+    @foreach (var e in libros)
+    {
+        <tr>
+            <td>@e.cod_lib</td>
+            <td>@e.ISBN</td>
+            <td>@e.categoria</td>
+            <td>@e.titulo</td>
+            <td>@e.autor</td>
+            <td>@e.editorial</td>
+            <td>@e.año_pub</td>
+        </tr>
+    }
+</table>

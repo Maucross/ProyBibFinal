@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "BuscarCatalogo";
+}
+<br><br><br>
+ <div class="row">
+    <div class="col-md-12"><br>
+        <h1 style="text-align:center"><u>Buscar Catálogo</u></h2>
+        
+    </div>
+</div>
+<form>  
+<div  class=" borde row">
+ 
+    <div class="col-md-3">
+           
+            <div class="form-group">
+                 <label for="exampleFormControlSelect1">Buscar Libro Por:</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option value="Titulo">Título</option>
+                <option value="Autor">Autor</option>
+                <option value="Editorial">Editorial</option>
+                <option value="Categoria">Categoría</option>
+                </select>
+            </div>      
+    </div>
+    <div class="col-md-7">
+         <div class="form-group">
+        <label for="exampleFormControlInput1"></label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" >
+        </div>
+    </div>
+    <div class="col-md-2">
+        <br>
+       <input type="button" value="Buscar" class="btn btn-primary" >  
+    </div>
+</div><br>
+</form>
+ <h1 style="text-align:center">Resultados de Busqueda</h1>
+ ---------------------------------------------------------------------------
+<!--<a class="btn btn-primary btn-sm" href="javascript:window.open('MantenerCliente','','width=500, height=450, left=100, top=100'); void 0">Nuevo Cliente</a>-->
+<div class="row">
+    <div class="col-md-7">
+    </div>
+    <div style="text-align:right" class="col-md-5">
+       <a  class="btn btn-primary btn-sm" href="javascript:history.back()">Regresar</a>
+
+    </div>
+</div>
