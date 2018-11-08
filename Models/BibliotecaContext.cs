@@ -18,31 +18,31 @@ namespace BIBLIOTECA.Models
         {
             base.OnModelCreating(modelBuilder);
 
-             modelBuilder.Entity<categoria>().HasData(
-                new categoria {
+             modelBuilder.Entity<Categoria>().HasData(
+                new Categoria {
                     Id = 1,
                     Nombre = "Sistemas"
                     
                 },
-                new categoria {
+                new Categoria {
                     Id = 2,
                     Nombre = "Arquitectura"
                    
                 },
-                new categoria {
+                new Categoria {
                     Id = 3,
                     Nombre = "Industrial"
                 },
-                new categoria {
+                new Categoria {
                     Id = 4,
                     Nombre = "Matematica"
                 }
             );
         }
-        public DbSet<Bibliotecario> Bibliotecario {get; set;}
-        public DbSet<Estudiante> Estudiante {get; set;}
-        public DbSet<Libro> Libro {get; set;}
-        public DbSet<Prestamo> Prestamo {get; set;}
-        public DbSet<categoria> categorias {get; set;}
+        public DbSet<Bibliotecario> bibliotecarios {get; set;}
+        public DbSet<Estudiante> Estudiantes {get; set;}
+        public DbSet<Libro> Libros {get; set;}
+        public DbSet<Prestamo> Prestamos {get; set;}
+        public DbSet<Categoria> Categorias {get; set;}
     }
 }

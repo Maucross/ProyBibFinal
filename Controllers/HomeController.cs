@@ -38,12 +38,12 @@ namespace BIBLIOTECA.Controllers
         }
         #region Libros
         public IActionResult Libros(string buscar) {
-            var libros = _context.Libro.Include(l => l.categoria).AsQueryable();
+            var libros = _context.Libros.Include(l => l.Categoria).AsQueryable();
 
             if(!string.IsNullOrEmpty(buscar))
             {
                 libros = libros.Where(l => l.ISBN.Contains(buscar)||l.titulo.Contains(buscar) 
-                ||l.categoria.Nombre.Contains(buscar) || l.autor.Contains(buscar)|| l.editorial.Contains(buscar));
+                ||l.Categoria.Nombre.Contains(buscar) || l.autor.Contains(buscar)|| l.editorial.Contains(buscar));
             }
 
             ViewBag.buscar = buscar;
@@ -54,7 +54,7 @@ namespace BIBLIOTECA.Controllers
             return View();
         }
         public void PreCargaDatos() {
-            ViewBag.categorias = new SelectList(_context.categorias, "Id","Nombre");
+            ViewBag.Categorias = new SelectList(_context.Categorias, "Id","Nombre");
         }
 
         [HttpPost]
@@ -64,7 +64,7 @@ namespace BIBLIOTECA.Controllers
                 _context.Add(l);
                 _context.SaveChanges();
 
-                return RedirectToAction("RegistrarLibro");
+                return RedirectToAction("Libros");
             }
             PreCargaDatos();
 

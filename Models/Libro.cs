@@ -10,8 +10,8 @@ namespace BIBLIOTECA.Models
         public int cod_lib {get; set;}
         [Required]
         public string ISBN {get; set;}
-        public categoria categoria {get; set;}
-        public int? categoriaId {get; set;}
+        public Categoria Categoria {get; set;}
+        public int? CategoriaId {get; set;}
 
         [Required]
         public string titulo {get; set;}

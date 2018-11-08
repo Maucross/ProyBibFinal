@@ -30,10 +30,10 @@ namespace BIBLIOTECA.Migrations
 
                     b.HasKey("id_bib");
 
-                    b.ToTable("Bibliotecario");
+                    b.ToTable("bibliotecarios");
                 });
 
-            modelBuilder.Entity("BIBLIOTECA.Models.categoria", b =>
+            modelBuilder.Entity("BIBLIOTECA.Models.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -42,7 +42,7 @@ namespace BIBLIOTECA.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("categorias");
+                    b.ToTable("Categorias");
 
                     b.HasData(
                         new { Id = 1, Nombre = "Sistemas" },
@@ -71,13 +71,15 @@ namespace BIBLIOTECA.Migrations
 
                     b.HasKey("cod_est");
 
-                    b.ToTable("Estudiante");
+                    b.ToTable("Estudiantes");
                 });
 
             modelBuilder.Entity("BIBLIOTECA.Models.Libro", b =>
                 {
                     b.Property<int>("cod_lib")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CategoriaId");
 
                     b.Property<string>("ISBN")
                         .IsRequired();
@@ -87,8 +89,6 @@ namespace BIBLIOTECA.Migrations
 
                     b.Property<int>("año_pub");
 
-                    b.Property<int?>("categoriaId");
-
                     b.Property<string>("editorial")
                         .IsRequired();
 
@@ -97,9 +97,9 @@ namespace BIBLIOTECA.Migrations
 
                     b.HasKey("cod_lib");
 
-                    b.HasIndex("categoriaId");
+                    b.HasIndex("CategoriaId");
 
-                    b.ToTable("Libro");
+                    b.ToTable("Libros");
                 });
 
             modelBuilder.Entity("BIBLIOTECA.Models.Prestamo", b =>
@@ -122,14 +122,14 @@ namespace BIBLIOTECA.Migrations
 
                     b.HasIndex("datosLibrocod_lib");
 
-                    b.ToTable("Prestamo");
+                    b.ToTable("Prestamos");
                 });
 
             modelBuilder.Entity("BIBLIOTECA.Models.Libro", b =>
                 {
-                    b.HasOne("BIBLIOTECA.Models.categoria", "categoria")
+                    b.HasOne("BIBLIOTECA.Models.Categoria", "Categoria")
                         .WithMany("Libros")
-                        .HasForeignKey("categoriaId");
+                        .HasForeignKey("CategoriaId");
                 });
 
             modelBuilder.Entity("BIBLIOTECA.Models.Prestamo", b =>

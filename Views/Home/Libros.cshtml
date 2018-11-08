@@ -14,7 +14,7 @@
     <tr>
         <th>Codigo de Libro</th>
         <th>ISBN</th>
-        <th>Categoria</th>
+      
         <th>Titulo</th>
         <th>Autor</th>
         <th>Editorial</th>
@@ -26,11 +26,13 @@
         <tr>
             <td>@e.cod_lib</td>
             <td>@e.ISBN</td>
-            <td>@e.categoria</td>
+           
             <td>@e.titulo</td>
             <td>@e.autor</td>
             <td>@e.editorial</td>
-            <td>@e.año_pub</td>
+            <td>@Html.DisplayFor(ModelItem => e.año_pub)
+
+            </td>
         </tr>
     }
 </table>

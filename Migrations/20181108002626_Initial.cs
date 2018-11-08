@@ -9,7 +9,7 @@ namespace BIBLIOTECA.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Bibliotecario",
+                name: "bibliotecarios",
                 columns: table => new
                 {
                     id_bib = table.Column<int>(nullable: false)
@@ -19,11 +19,11 @@ namespace BIBLIOTECA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bibliotecario", x => x.id_bib);
+                    table.PrimaryKey("PK_bibliotecarios", x => x.id_bib);
                 });
 
             migrationBuilder.CreateTable(
-                name: "categorias",
+                name: "Categorias",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -32,11 +32,11 @@ namespace BIBLIOTECA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_categorias", x => x.Id);
+                    table.PrimaryKey("PK_Categorias", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Estudiante",
+                name: "Estudiantes",
                 columns: table => new
                 {
                     cod_est = table.Column<int>(nullable: false)
@@ -49,17 +49,17 @@ namespace BIBLIOTECA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Estudiante", x => x.cod_est);
+                    table.PrimaryKey("PK_Estudiantes", x => x.cod_est);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Libro",
+                name: "Libros",
                 columns: table => new
                 {
                     cod_lib = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ISBN = table.Column<string>(nullable: false),
-                    categoriaId = table.Column<int>(nullable: true),
+                    CategoriaId = table.Column<int>(nullable: true),
                     titulo = table.Column<string>(nullable: false),
                     autor = table.Column<string>(nullable: false),
                     editorial = table.Column<string>(nullable: false),
@@ -67,17 +67,17 @@ namespace BIBLIOTECA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Libro", x => x.cod_lib);
+                    table.PrimaryKey("PK_Libros", x => x.cod_lib);
                     table.ForeignKey(
-                        name: "FK_Libro_categorias_categoriaId",
-                        column: x => x.categoriaId,
-                        principalTable: "categorias",
+                        name: "FK_Libros_Categorias_CategoriaId",
+                        column: x => x.CategoriaId,
+                        principalTable: "Categorias",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Prestamo",
+                name: "Prestamos",
                 columns: table => new
                 {
                     cod_prest = table.Column<int>(nullable: false)
@@ -89,23 +89,23 @@ namespace BIBLIOTECA.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Prestamo", x => x.cod_prest);
+                    table.PrimaryKey("PK_Prestamos", x => x.cod_prest);
                     table.ForeignKey(
-                        name: "FK_Prestamo_Estudiante_datosEstudiantecod_est",
+                        name: "FK_Prestamos_Estudiantes_datosEstudiantecod_est",
                         column: x => x.datosEstudiantecod_est,
-                        principalTable: "Estudiante",
+                        principalTable: "Estudiantes",
                         principalColumn: "cod_est",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Prestamo_Libro_datosLibrocod_lib",
+                        name: "FK_Prestamos_Libros_datosLibrocod_lib",
                         column: x => x.datosLibrocod_lib,
-                        principalTable: "Libro",
+                        principalTable: "Libros",
                         principalColumn: "cod_lib",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
-                table: "categorias",
+                table: "Categorias",
                 columns: new[] { "Id", "Nombre" },
                 values: new object[,]
                 {
@@ -116,37 +116,37 @@ namespace BIBLIOTECA.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Libro_categoriaId",
-                table: "Libro",
-                column: "categoriaId");
+                name: "IX_Libros_CategoriaId",
+                table: "Libros",
+                column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Prestamo_datosEstudiantecod_est",
-                table: "Prestamo",
+                name: "IX_Prestamos_datosEstudiantecod_est",
+                table: "Prestamos",
                 column: "datosEstudiantecod_est");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Prestamo_datosLibrocod_lib",
-                table: "Prestamo",
+                name: "IX_Prestamos_datosLibrocod_lib",
+                table: "Prestamos",
                 column: "datosLibrocod_lib");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Bibliotecario");
+                name: "bibliotecarios");
 
             migrationBuilder.DropTable(
-                name: "Prestamo");
+                name: "Prestamos");
 
             migrationBuilder.DropTable(
-                name: "Estudiante");
+                name: "Estudiantes");
 
             migrationBuilder.DropTable(
-                name: "Libro");
+                name: "Libros");
 
             migrationBuilder.DropTable(
-                name: "categorias");
+                name: "Categorias");
         }
     }
 }

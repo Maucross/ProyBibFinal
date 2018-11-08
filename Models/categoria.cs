@@ -4,13 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BIBLIOTECA.Models
 {
-    public class categoria
+    public class Categoria
     {
         public int Id {get; set;}
         public string Nombre {get; set;}
         public List<Libro> Libros {get; set;}
 
-        public categoria() {
+        public Categoria() {
             Libros = new List<Libro>();
         }
     }
