@@ -71,6 +71,10 @@ namespace BIBLIOTECA.Controllers
             return View(l);
         }
 
+        public IActionResult RegistrarLibro(){
+            return View();
+        }
+
         #endregion
         public IActionResult VerPrestamo()
         {
