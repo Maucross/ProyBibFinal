@@ -11581,11 +11581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mau_a\\Desktop\\ProyBibFinal\\ProyBibFinal\\BIBLIOTECA.csproj",
+      "projectUniqueName": "c:\\Users\\mau_a\\Desktop\\ProyBibFinal\\BIBLIOTECA.csproj",
       "projectName": "BIBLIOTECA",
-      "projectPath": "C:\\Users\\mau_a\\Desktop\\ProyBibFinal\\ProyBibFinal\\BIBLIOTECA.csproj",
+      "projectPath": "c:\\Users\\mau_a\\Desktop\\ProyBibFinal\\BIBLIOTECA.csproj",
       "packagesPath": "C:\\Users\\mau_a\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mau_a\\Desktop\\ProyBibFinal\\ProyBibFinal\\obj\\",
+      "outputPath": "c:\\Users\\mau_a\\Desktop\\ProyBibFinal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
