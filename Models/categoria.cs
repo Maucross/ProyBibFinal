@@ -11,7 +11,8 @@ namespace BIBLIOTECA.Models
         //Nombre
         public string Nombre {get; set;}
         public List<Libro> Libros {get; set;}
-
+        
+        //Categoría
         public Categoria() {
             Libros = new List<Libro>();
         }
