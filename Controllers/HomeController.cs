@@ -49,10 +49,25 @@ namespace BIBLIOTECA.Controllers
             ViewBag.buscar = buscar;
             return View(libros.OrderBy(l => l.titulo).ToList());
         }
+
+        
+        public IActionResult BuscarCatalogo(string buscar) {
+            var libros = _context.Libros.Include(l => l.Categoria).AsQueryable();
+
+            if(!string.IsNullOrEmpty(buscar))
+            {
+                libros = libros.Where(l => l.ISBN.Contains(buscar)||l.titulo.Contains(buscar) 
+                ||l.Categoria.Nombre.Contains(buscar) || l.autor.Contains(buscar)|| l.editorial.Contains(buscar));
+            }
+
+            ViewBag.buscar = buscar;
+            return View(libros.OrderBy(l => l.titulo).ToList());
+        }
         public IActionResult RegistrarLibro(){
             PreCargaDatos();
             return View();
         }
+        
         public void PreCargaDatos() {
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id","Nombre");
         }
@@ -81,10 +96,7 @@ namespace BIBLIOTECA.Controllers
         {
             return View();
         }
-         public IActionResult BuscarCatalogo()
-        {
-            return View();
-        }
+       
          public IActionResult InfoLibro()
         {
             return View();

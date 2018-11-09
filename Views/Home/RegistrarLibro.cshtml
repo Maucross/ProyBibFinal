@@ -1,5 +1,7 @@
-@model Libro
-<br><br><br>
+@model Libro   
+@{
+    var libros = Model;
+}
 
 <div class="row">
     <div class="col-md-12"><br>
@@ -11,10 +13,7 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Datos de Libros</h3>
-        <div class="form-group">
-            <label asp-for="cod_lib">Código de Libro:</label>     
-            <input class="form-control" type="text" name="cod_lib" asp-for="cod_lib" required>
-        </div> <br>
+       
         <div class="form-group">
             <label asp-for="ISBN">ISBN:</label>     
             <input class="form-control" type="text" value="978-9-68-247589-4" name="ISBN" asp-for="ISBN" required>
@@ -55,15 +54,14 @@
                 <input asp-action="editorial" class ="form-control" type="text" name="editorial" required>
             </div>    
         </div>   
-    </div>  <br><br>
-    ---------------------------------
+    </div>
     <!--<a class="btn btn-primary btn-sm" href="javascript:window.open('MantenerCliente','','width=500, height=450, left=100, top=100'); void 0">Nuevo Cliente</a>-->
-    
-
-        <div style="text-align:right" class="col-md-5">
-        <a  class="btn btn-primary" href="javascript:history.back()">Regresar</a>
+    <br>
+    <div class="row">
+    <div style="text-align:right" class="col-md-12">
+        <a  class="btn btn-primary" href="Menu">Regresar</a>
          <button class="btn btn-primary" type="submit">Registrar</button>
     </div>
-
+    </div>
 </form>  
     

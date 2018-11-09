@@ -14,7 +14,7 @@
     <tr>
         <th>Codigo de Libro</th>
         <th>ISBN</th>
-      
+        <th>Categoria</th>
         <th>Titulo</th>
         <th>Autor</th>
         <th>Editorial</th>
@@ -24,15 +24,26 @@
     @foreach (var e in libros)
     {
         <tr>
-            <td>@e.cod_lib</td>
-            <td>@e.ISBN</td>
-           
-            <td>@e.titulo</td>
-            <td>@e.autor</td>
-            <td>@e.editorial</td>
-            <td>@Html.DisplayFor(ModelItem => e.año_pub)
-
+            <td>@Html.DisplayFor(ModelItem => e.cod_lib)</td>
+            <td>@Html.DisplayFor(ModelItem => e.ISBN)</td>
+            <td>@Html.DisplayFor(ModelItem => e.Categoria.Nombre)</td>
+            <td>@Html.DisplayFor(ModelItem => e.titulo)</td>
+            <td>@Html.DisplayFor(ModelItem => e.autor)</td>
+            <td>@Html.DisplayFor(ModelItem => e.editorial)</td>
+            <td>@Html.DisplayFor(ModelItem => e.año_pub)</td>
+            <td>    
+                <a type="button" class="btn btn-warning btn-sm" asp-controller="Libro" asp-action="Edit" asp-route-id="@e.cod_lib">Modificar</a> |
+                
+                <a  type="button" class="btn btn-danger btn-sm" asp-controller="Libro" asp-action="Delete" asp-route-id="@e.cod_lib">Eliminar</a>
             </td>
         </tr>
     }
 </table>
+<div class="row">
+    <div style="text-align:right" class="col-md-12">
+        <a  class="btn btn-primary" href="RegistrarLibro">Regresar</a>
+         
+    </div>
+</div>
+
+    

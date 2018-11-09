@@ -1,48 +1,56 @@
+@model List<Libro>
 @{
-    ViewData["Title"] = "BuscarCatalogo";
+    var libros = Model;
 }
-<br><br><br>
+
  <div class="row">
     <div class="col-md-12"><br>
         <h1 style="text-align:center"><u>Buscar Catálogo</u></h2>
         
     </div>
 </div>
-<form>  
-<div  class=" borde row">
- 
-    <div class="col-md-3">
-           
-            <div class="form-group">
-                 <label for="exampleFormControlSelect1">Buscar Libro Por:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                <option value="Titulo">Título</option>
-                <option value="Autor">Autor</option>
-                <option value="Editorial">Editorial</option>
-                <option value="Categoria">Categoría</option>
-                </select>
-            </div>      
-    </div>
-    <div class="col-md-7">
-         <div class="form-group">
-        <label for="exampleFormControlInput1"></label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" >
-        </div>
-    </div>
-    <div class="col-md-2">
-        <br>
-       <input type="button" value="Buscar" class="btn btn-primary" >  
-    </div>
-</div><br>
+
+<form asp-action="Libros" method="GET">
+    <input type="text" name="buscar" class="form-control" value="@ViewBag.buscar"><br>
+    <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
- <h1 style="text-align:center">Resultados de Busqueda</h1>
- ---------------------------------------------------------------------------
-<!--<a class="btn btn-primary btn-sm" href="javascript:window.open('MantenerCliente','','width=500, height=450, left=100, top=100'); void 0">Nuevo Cliente</a>-->
+<br>
+<table class="table">
+    <tr>
+        <th>Codigo de Libro</th>
+        <th>ISBN</th>
+        <th>Categoria</th>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Editorial</th>
+        <th>Año de publicacion</th>
+    </tr>
+
+    @foreach (var e in libros)
+    {
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => e.cod_lib)</td>
+            <td>@Html.DisplayFor(ModelItem => e.ISBN)</td>
+            <td>@Html.DisplayFor(ModelItem => e.Categoria.Nombre)</td>
+            <td>@Html.DisplayFor(ModelItem => e.titulo)</td>
+            <td>@Html.DisplayFor(ModelItem => e.autor)</td>
+            <td>@Html.DisplayFor(ModelItem => e.editorial)</td>
+            <td>@Html.DisplayFor(ModelItem => e.año_pub)</td>
+            <td>    
+                <a type="button" class="btn btn-warning btn-sm" asp-controller="Libro" asp-action="Details" asp-route-id="@e.cod_lib">Ver Detalle</a> |
+                
+                <a  type="button" class="btn btn-success btn-sm" asp-controller="Home" asp-action="GenerarPrestamo">Reservar</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
 <div class="row">
     <div class="col-md-7">
     </div>
     <div style="text-align:right" class="col-md-5">
-       <a  class="btn btn-primary btn-sm" href="javascript:history.back()">Regresar</a>
+       <a  class="btn btn-primary" href="Menu">Regresar</a>
 
     </div>
 </div>

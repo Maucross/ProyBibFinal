@@ -7,8 +7,10 @@ namespace BIBLIOTECA.Models
     public class Libro
     {
         [Key]
+        
         public int cod_lib {get; set;}
-        [Required]
+        [Required(ErrorMessage = "Please enter last name")]
+        [StringLength(17)]
         public string ISBN {get; set;}
         public Categoria Categoria {get; set;}
         public int? CategoriaId {get; set;}

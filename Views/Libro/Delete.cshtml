@@ -1,0 +1,51 @@
+@model Libro
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar esto?</h3>
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(e => e.ISBN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.ISBN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.autor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.autor)
+        </dd>
+         <dt>
+            @Html.DisplayNameFor(e => e.editorial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.editorial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.año_pub)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.año_pub)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="cod_lib" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-controller="Home" asp-action="Libros">Regresar</a>
+    </form>
+</div>

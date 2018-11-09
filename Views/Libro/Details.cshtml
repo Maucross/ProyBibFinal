@@ -1,0 +1,59 @@
+@model Libro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+     <dl class="dl-horizontal">
+         <dt>
+            @Html.DisplayNameFor(e => e.cod_lib)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.cod_lib)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.ISBN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.ISBN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.CategoriaId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.CategoriaId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.autor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.autor)
+        </dd>
+         <dt>
+            @Html.DisplayNameFor(e => e.editorial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.editorial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(e => e.año_pub)
+        </dt>
+        <dd>
+            @Html.DisplayFor(e => e.año_pub)
+        </dd>
+    </dl>
+</div>
+<div>  
+   <a asp-controller="Home" asp-action="BuscarCatalogo">Regresar</a>
+</div>

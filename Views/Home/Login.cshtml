@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "Login";
+    Layout=null;
 }  
 <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -29,7 +30,7 @@
         <div class="forgot">
             <a href="reset.html">¿Se olvidó su contraseña?</a>
         </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <a asp-action="Menu" type="submit" class="btn btn-primary" asp-controller="Home">Ingresar</a>
     </form>
 </div>
 </div>
