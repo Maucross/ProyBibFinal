@@ -74,8 +74,7 @@ namespace BIBLIOTECA.Controllers
 
             return View(l);
         }
-
-        public IActionResult RegistrarLibro(){
+        public IActionResult Libros(){
             return View();
         }
 
