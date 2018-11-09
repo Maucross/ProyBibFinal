@@ -24,6 +24,13 @@ namespace BIBLIOTECA.Controllers
             return View();
         }
 
+         public IActionResult RecuperarContraseña()
+        {
+            ViewData["Message"] = "Your password page.";
+
+            return View();
+        }
+
         public IActionResult Menu()
         {
             ViewData["Message"] = "Menu";
