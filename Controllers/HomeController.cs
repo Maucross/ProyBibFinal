@@ -56,6 +56,10 @@ namespace BIBLIOTECA.Controllers
             ViewBag.buscar = buscar;
             return View(libros.OrderBy(l => l.titulo).ToList());
         }
+        public IActionResult Libros(){
+            PreCargaDatos();
+            retun View();
+        }
         
         public void PreCargaDatos() {
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id","Nombre");
@@ -68,13 +72,13 @@ namespace BIBLIOTECA.Controllers
                 _context.Add(l);
                 _context.SaveChanges();
 
-                return RedirectToAction("Libros");
+                return RedirectToAction("ConfirmaciónLibros");
             }
             PreCargaDatos();
 
             return View(l);
         }
-        public IActionResult Libros(){
+        public IActionResult ConfirmaciónLibros(){
             return View();
         }
 
