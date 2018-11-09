@@ -56,10 +56,7 @@ namespace BIBLIOTECA.Controllers
             ViewBag.buscar = buscar;
             return View(libros.OrderBy(l => l.titulo).ToList());
         }
-        public IActionResult Libros(){
-            PreCargaDatos();
-            retun View();
-        }
+        
         
         public void PreCargaDatos() {
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id","Nombre");
