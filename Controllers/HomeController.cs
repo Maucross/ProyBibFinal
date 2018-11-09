@@ -17,20 +17,21 @@ namespace BIBLIOTECA.Controllers
         {
             this._context = _context;
         }
+        //Login
          public IActionResult Login()
         {
             ViewData["Message"] = "Your login page.";
 
             return View();
         }
-
+        //RecuperarContraseña
          public IActionResult RecuperarContraseña()
         {
             ViewData["Message"] = "Your password page.";
 
             return View();
         }
-
+        //Menú
         public IActionResult Menu()
         {
             ViewData["Message"] = "Menu";
