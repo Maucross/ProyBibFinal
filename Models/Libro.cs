@@ -13,14 +13,6 @@ namespace BIBLIOTECA.Models
         public Categoria Categoria {get; set;}
         public int? CategoriaId {get; set;}
 
-        [Required]
-        public string titulo {get; set;}
-        [Required]
-        public string autor {get; set;}
-        [Required]
-        public string editorial {get; set;}
-        [Required]
-        public int año_pub {get; set;}
-       
+        
     }
 }
