@@ -70,7 +70,7 @@ using BIBLIOTECA.Models;
             WriteLiteral("\r\n <div class=\"row\">\r\n    <div class=\"col-md-12\"><br>\r\n        <h1 style=\"text-align:center\"><u>Buscar Catálogo</u></h2>\r\n        \r\n    </div>\r\n</div>\r\n\r\n");
             EndContext();
             BeginContext(206, 203, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b0fb674b11c4801942a4cd901bbb520", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2f96177c4734087b3f0668c6f5af8a7", async() => {
                 BeginContext(245, 59, true);
                 WriteLiteral("\r\n    <input type=\"text\" name=\"buscar\" class=\"form-control\"");
                 EndContext();
@@ -185,7 +185,7 @@ WriteAttributeValue("", 312, ViewBag.buscar, 312, 15, false);
             WriteLiteral("</td>\r\n            <td>    \r\n                ");
             EndContext();
             BeginContext(1199, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7bf7f3e553a45db90e1017321368782", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a668e61882104aa4b98883e1878c9c99", async() => {
                 BeginContext(1317, 11, true);
                 WriteLiteral("Ver Detalle");
                 EndContext();
@@ -224,7 +224,7 @@ WriteAttributeValue("", 312, ViewBag.buscar, 312, 15, false);
             WriteLiteral(" |\r\n                \r\n                ");
             EndContext();
             BeginContext(1370, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "839e1923bfaa450f86fbc968c643b485", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73071d2b14634388af83896a0fca31f5", async() => {
                 BeginContext(1470, 8, true);
                 WriteLiteral("Reservar");
                 EndContext();

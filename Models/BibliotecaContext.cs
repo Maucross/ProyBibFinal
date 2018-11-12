@@ -48,9 +48,9 @@ namespace BIBLIOTECA.Models
                     Nombre = "A domicilio(max 2 dias)"
                     
                 },
-                new Categoria {
+                new Modalidad {
                     Id = 2,
-                    Nombre = "A sala (hasta que cierre la biblioteca"
+                    Nombre = "A sala (hasta que cierre la biblioteca)"
                    
                 }
             );

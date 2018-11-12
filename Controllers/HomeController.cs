@@ -30,12 +30,7 @@ namespace BIBLIOTECA.Controllers
 
             return View();
         }
-         public IActionResult GenerarPrestamo()
-        {
-            ViewData["Message"] = "Your Prestamo page.";
-
-            return View();
-        }
+        
         #region Libros
         public IActionResult Libros(string buscar) {
             var libros = _context.Libros.Include(l => l.Categoria).AsQueryable();
@@ -87,11 +82,43 @@ namespace BIBLIOTECA.Controllers
         }
 
         #endregion
-        public IActionResult VerPrestamo()
-        {
-            
+
+        #region prestamo
+         public IActionResult VerPrestamo(string buscar) {
+            var prestamo = _context.Prestamos.Include(p => p.Modalidad).AsQueryable();
+
+            if(!string.IsNullOrEmpty(buscar))
+            {
+                prestamo = prestamo.Where(p => p.Libro.titulo.Contains(buscar)||p.Estudiante.nomb.Contains(buscar) 
+                ||p.Modalidad.Nombre.Contains(buscar));
+            }
+
+            ViewBag.buscar = buscar;
+            return View(prestamo.OrderBy(p => p.cod_prest).ToList());
+        }
+        public IActionResult GenerarPrestamo(){
+            PreCargaDatos2();
             return View();
         }
+        public void PreCargaDatos2() {
+            ViewBag.Modalidades = new SelectList(_context.Modalidades, "Id","Nombre");
+        }
+
+        [HttpPost]
+         public IActionResult GenerarPrestamo(Prestamo p)
+        {
+             if (ModelState.IsValid)
+            {
+                _context.Add(p);
+                _context.SaveChanges();
+
+                return RedirectToAction("GenerarPrestamo");
+            }
+            PreCargaDatos2();
+
+            return View(p);
+        } 
+        #endregion
          public IActionResult DetalleLib()
         {
             return View();

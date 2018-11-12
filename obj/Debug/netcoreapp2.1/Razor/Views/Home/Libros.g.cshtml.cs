@@ -69,7 +69,7 @@ using BIBLIOTECA.Models;
             WriteLiteral("\r\n<h1>Listado de Libros</h1>\r\n\r\n");
             EndContext();
             BeginContext(84, 203, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8df74f942bd249989727941b4c9622fb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5728a618118d4c2382b84f0c9c1208cd", async() => {
                 BeginContext(123, 59, true);
                 WriteLiteral("\r\n    <input type=\"text\" name=\"buscar\" class=\"form-control\"");
                 EndContext();
@@ -184,7 +184,7 @@ WriteAttributeValue("", 190, ViewBag.buscar, 190, 15, false);
             WriteLiteral("</td>\r\n            <td>    \r\n                ");
             EndContext();
             BeginContext(1077, 128, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b04b3b64b3649bbac9265c063de65f5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2acccfc99e0e486f99cddb0c3ba911b3", async() => {
                 BeginContext(1192, 9, true);
                 WriteLiteral("Modificar");
                 EndContext();
@@ -223,7 +223,7 @@ WriteAttributeValue("", 190, ViewBag.buscar, 190, 15, false);
             WriteLiteral(" |\r\n                \r\n                ");
             EndContext();
             BeginContext(1243, 129, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e931586626164919ad9e97a9338e94a0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d11d7326a5864e559707695a62f5a9f9", async() => {
                 BeginContext(1360, 8, true);
                 WriteLiteral("Eliminar");
                 EndContext();

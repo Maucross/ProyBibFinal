@@ -84,7 +84,7 @@ using BIBLIOTECA.Models;
                 Categoría:<select>");
             EndContext();
             BeginContext(812, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79b43eae6446452190abab02871e0e87", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "694b506a9c8247cf8b005610bd6316fa", async() => {
                 BeginContext(839, 10, true);
                 WriteLiteral("Tecnología");
                 EndContext();
@@ -106,7 +106,7 @@ using BIBLIOTECA.Models;
             WriteLiteral("\r\n            ");
             EndContext();
             BeginContext(872, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ef1a9e32db4447a97f5d5a9ea6c4a69", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a700ddc80314e1a839d2d09aad1c274", async() => {
                 BeginContext(900, 11, true);
                 WriteLiteral("Matemáticas");
                 EndContext();

@@ -204,7 +204,7 @@ using BIBLIOTECA.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>  \r\n   ");
             EndContext();
             BeginContext(1264, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c20e34c5baa4045a7348ac99ad8b8c6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45c7bbd3fa47438bba893ac9b94f6497", async() => {
                 BeginContext(1317, 8, true);
                 WriteLiteral("Regresar");
                 EndContext();

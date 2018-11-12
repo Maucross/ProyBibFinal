@@ -3,10 +3,6 @@
     var prestamos = Model;
 }
 
-@{
-    ViewData["Title"] = "GenerarPrestamo";
-}
-
 <div class="row">
     <div class="col-md-12">
         <h1 style="text-align:center"><u>Generar Prestamo</u></h2>
@@ -19,21 +15,21 @@
     <div class="borde col-md-6">
         <h3>Datos del Estudiante</h3>
             <div>
-                <label asp-for="cod_est">Código de Estudiante:</label> 
-                <input class="form-control" type="text" name="cod_est" asp-for="cod_est" value="2015147360" required>
+                <label asp-for="Estudiante">Código de Estudiante:</label> 
+                <input class="form-control" type="text" name="Estudiantecod_est" asp-for="Estudiantecod_est" value="2015147360" required>
                 <input type="button" class="btn btn-primary btn-sm" value="Buscar Estudiante"/>
             </div><br>
             <div>
-                <label asp-for="nomb">Nombres:</label> 
-                <input type="text" class="form-control" name="nomb" asp-for="nomb" required/>
+                <label asp-for="Estudiante">Nombres:</label> 
+                <input type="text" class="form-control" name="Estudiantenomb" asp-for="Estudiantenomb" required/>
             </div><br>
             <div>
-                <label asp-for="ape">Apellidos:</label> 
-                <input type="text" class="form-control" name="ape" asp-for="ape" required/>
+                <label asp-for="Estudiante">Apellidos:</label> 
+                <input type="text" class="form-control" name="Estudianteape" asp-for="Estudianteape" required/>
             </div><br>
             <div>
-                <label asp-for="escuela">Escuela:</label> 
-                <input type="text"  name="escuela" asp-for="escuela" required>
+                <label asp-for="Estudiante">Escuela:</label> 
+                <input type="text"  name="Estudianteescuela" asp-for="Estudianteescuela" required>
             </div><br>
 
             
@@ -41,21 +37,21 @@
     <div class="borde col-md-6">
         <h3>Datos de Libro</h3>
             <div>
-                <label asp-for="cod_lib">Código de Libro:</label> 
-                <input class="form-control" type="text" asp-for="cod_lib" name="cod_lib" required/>
+                <label asp-for="Libro">Código de Libro:</label> 
+                <input class="form-control" type="text" asp-for="Librocod_lib" name="Librocod_lib" required/>
                 <input type="button" class="btn btn-primary btn-sm" value="Buscar Libro">
             </div><br>
             <div>
-                <label asp-for="ISBN">ISBN: </label> 
-                <input class="form-control" type="text" value="978-9-68-247589-4" asp-for="ISBN" name="ISBN">
+                <label asp-for="Libro">ISBN: </label> 
+                <input class="form-control" type="text" value="978-9-68-247589-4" asp-for="LibroISBN" name="LibroISBN">
             </div><br>
             <div>
-                <label asp-for="titulo">Título:</label> 
-                <input class="form-control" type="text" name="titulo" asp-for="titulo">
+                <label asp-for="Libro">Título:</label> 
+                <input class="form-control" type="text" name="Librotitulo" asp-for="Librotitulo">
             </div><br>
             <div>
-                <label asp-for="autor">Autor:</label> 
-                <input type="text" asp-action="autor" name="autor">
+                <label asp-for="Libro">Autor:</label> 
+                <input type="text" asp-action="Libroautor" name="Libroautor">
             </div><br>
 </div>
 <div class="row">
@@ -64,17 +60,17 @@
         <div class="form-group">
                 <label asp-for="Modalidad">Modalidad:</label>  
                 <select asp-for="ModalidadId" class="custom-select" asp-items="ViewBag.modalidades">                  
-                </select> 
+                </select> <br>
         </div> 
         </div><br>
 
         <div>
             <label asp-for="fecha_reserva">Fecha de Reserva:</label> 
-            <input asp-for="fecha_reserva" name="fecha_reserva" type="datetime-local" size="4">
+            <input asp-for="fecha_reserva" name="fecha_reserva" type="date">
         </div><br><br><br>
         <div style="text-align:right">
          <a  class="btn btn-primary btn-sm" href="javascript:history.back()">Regresar</a>
-        <button type="button"class="btn btn-success btn-sm">Generar</button>
+        <button type="submit"class="btn btn-success btn-sm">Generar</button>
          </div>
     </div>
     </div>

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BIBLIOTECA.Migrations
 {
     [DbContext(typeof(BibliotecaContext))]
-    [Migration("20181108002626_Initial")]
+    [Migration("20181110113740_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,8 @@ namespace BIBLIOTECA.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("Nombre")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -61,15 +62,9 @@ namespace BIBLIOTECA.Migrations
 
                     b.Property<string>("ape");
 
-                    b.Property<string>("contraseña")
-                        .IsRequired();
-
                     b.Property<string>("escuela");
 
                     b.Property<string>("nomb");
-
-                    b.Property<string>("usuario")
-                        .IsRequired();
 
                     b.HasKey("cod_est");
 
@@ -84,7 +79,8 @@ namespace BIBLIOTECA.Migrations
                     b.Property<int?>("CategoriaId");
 
                     b.Property<string>("ISBN")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(17);
 
                     b.Property<string>("autor")
                         .IsRequired();
@@ -109,22 +105,53 @@ namespace BIBLIOTECA.Migrations
                     b.Property<int>("cod_prest")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("datosEstudiantecod_est");
+                    b.Property<string>("Estudianteape");
 
-                    b.Property<int?>("datosLibrocod_lib");
+                    b.Property<int?>("Estudiantecod_est");
+
+                    b.Property<string>("Estudianteescuela");
+
+                    b.Property<string>("Estudiantenomb");
+
+                    b.Property<string>("LibroISBN");
+
+                    b.Property<string>("Libroautor");
+
+                    b.Property<int?>("Librocod_lib");
+
+                    b.Property<string>("Librotitulo");
+
+                    b.Property<int?>("ModalidadId")
+                        .IsRequired();
 
                     b.Property<DateTime>("fecha_reserva");
 
-                    b.Property<string>("modalidad")
-                        .IsRequired();
-
                     b.HasKey("cod_prest");
 
-                    b.HasIndex("datosEstudiantecod_est");
+                    b.HasIndex("Estudiantecod_est");
 
-                    b.HasIndex("datosLibrocod_lib");
+                    b.HasIndex("Librocod_lib");
+
+                    b.HasIndex("ModalidadId");
 
                     b.ToTable("Prestamos");
+                });
+
+            modelBuilder.Entity("ProyBibFinalCopia.Models.Modalidad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Nombre");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Modalidades");
+
+                    b.HasData(
+                        new { Id = 1, Nombre = "A domicilio(max 2 dias)" },
+                        new { Id = 2, Nombre = "A sala (hasta que cierre la biblioteca)" }
+                    );
                 });
 
             modelBuilder.Entity("BIBLIOTECA.Models.Libro", b =>
@@ -136,13 +163,18 @@ namespace BIBLIOTECA.Migrations
 
             modelBuilder.Entity("BIBLIOTECA.Models.Prestamo", b =>
                 {
-                    b.HasOne("BIBLIOTECA.Models.Estudiante", "datosEstudiante")
+                    b.HasOne("BIBLIOTECA.Models.Estudiante", "Estudiante")
                         .WithMany()
-                        .HasForeignKey("datosEstudiantecod_est");
+                        .HasForeignKey("Estudiantecod_est");
 
-                    b.HasOne("BIBLIOTECA.Models.Libro", "datosLibro")
+                    b.HasOne("BIBLIOTECA.Models.Libro", "Libro")
                         .WithMany()
-                        .HasForeignKey("datosLibrocod_lib");
+                        .HasForeignKey("Librocod_lib");
+
+                    b.HasOne("ProyBibFinalCopia.Models.Modalidad", "Modalidad")
+                        .WithMany("Prestamo")
+                        .HasForeignKey("ModalidadId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

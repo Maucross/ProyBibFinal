@@ -2,7 +2,7 @@
 
 namespace BIBLIOTECA.Migrations
 {
-    public partial class tercero : Migration
+    public partial class quinto : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

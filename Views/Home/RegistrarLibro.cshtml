@@ -16,20 +16,20 @@
        
         <div class="form-group">
             <label asp-for="ISBN">ISBN:</label>     
-            <input class="form-control" type="text" value="978-9-68-247589-4" name="ISBN" asp-for="ISBN" required>
+            <input class="form-control" type="text" value="978-9-68-247589-4" name="ISBN" asp-for="ISBN" pattern="{17}" required>
         </div> 
         </div>
         <br><br><br>
         <div class="col-md-2">
             <div class="form-group" >
                 <label asp-for="año_pub">Año de Publicación: </label>
-                <input class ="form-control"  type="number" name="año_pub" asp-for="año_pub" required>
+                <input class ="form-control"  type="number" name="año_pub" asp-for="año_pub" pattern="[0-9]{4}" required >
             </div> 
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <label asp-for="Categoria">Categoria:</label>  
-                <select asp-for="CategoriaId" class="custom-select" asp-items="ViewBag.categorias">                  
+                <select asp-for="CategoriaId" class="custom-select" asp-items="ViewBag.Categorias" >                  
                 </select> 
             </div> 
         </div>    
@@ -39,13 +39,13 @@
         <div class="col-md-4">
             <div class="form-group" >
                 <label asp-action="titulo">Titulo: </label>
-                <input asp-action="titulo" class ="form-control" type="text" name="titulo" required>
+                <input asp-action="titulo" class ="form-control" type="text" name="titulo" pattern="[A-Za-z]{2-25}" required>
             </div>    
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <label asp-action="autor">Autor: </label>
-                <input asp-action="autor" class ="form-control" type="text" name="autor" required>
+                <input asp-action="autor" class ="form-control" type="text" name="autor" pattern="[A-Za-z]{2-25}" required>
             </div>    
         </div>
         <div class="col-md-4">
