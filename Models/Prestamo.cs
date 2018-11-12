@@ -9,6 +9,7 @@ namespace BIBLIOTECA.Models
     {
         [Key]
         public int cod_prest {get; set;}
+<<<<<<< HEAD
         public Libro Libro {get; set;}
         public int? Librocod_lib {get; set;}
         public string LibroISBN {get; set;}
@@ -24,6 +25,16 @@ namespace BIBLIOTECA.Models
         public Modalidad Modalidad {get; set;}
         public int? ModalidadId {get; set;}
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+=======
+        //DatosLibro
+        public Libro datosLibro {get; set;}
+        //DatosEstudiante
+        public Estudiante datosEstudiante {get; set;}
+        [Required(ErrorMessage = "Ingresar modalidad")]
+        //Modalidad
+        public string modalidad {get; set;}
+        [Required(ErrorMessage = "Ingresar fecha de reserva")]
+>>>>>>> c1048ceec744d40708034c5525550f9257b52fc6
         public DateTime fecha_reserva {get; set;}
        
     }

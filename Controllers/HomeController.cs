@@ -17,13 +17,21 @@ namespace BIBLIOTECA.Controllers
         {
             this._context = _context;
         }
+        //Login
          public IActionResult Login()
         {
             ViewData["Message"] = "Your login page.";
 
             return View();
         }
+        //RecuperarContraseña
+         public IActionResult RecuperarContraseña()
+        {
+            ViewData["Message"] = "Your password page.";
 
+            return View();
+        }
+        //Menú
         public IActionResult Menu()
         {
             ViewData["Message"] = "Menu";
@@ -44,6 +52,7 @@ namespace BIBLIOTECA.Controllers
             ViewBag.buscar = buscar;
             return View(libros.OrderBy(l => l.titulo).ToList());
         }
+<<<<<<< HEAD
 
         
         public IActionResult BuscarCatalogo(string buscar) {
@@ -62,6 +71,9 @@ namespace BIBLIOTECA.Controllers
             PreCargaDatos();
             return View();
         }
+=======
+        
+>>>>>>> c1048ceec744d40708034c5525550f9257b52fc6
         
         public void PreCargaDatos() {
             ViewBag.Categorias = new SelectList(_context.Categorias, "Id","Nombre");
@@ -74,11 +86,14 @@ namespace BIBLIOTECA.Controllers
                 _context.Add(l);
                 _context.SaveChanges();
 
-                return RedirectToAction("Libros");
+                return RedirectToAction("ConfirmaciónLibros");
             }
             PreCargaDatos();
 
             return View(l);
+        }
+        public IActionResult ConfirmaciónLibros(){
+            return View();
         }
 
         #endregion

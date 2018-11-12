@@ -11581,11 +11581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\BIBLIOTECA.csproj",
+      "projectUniqueName": "c:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\BIBLIOTECA.csproj",
       "projectName": "BIBLIOTECA",
-      "projectPath": "C:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\BIBLIOTECA.csproj",
+      "projectPath": "c:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\BIBLIOTECA.csproj",
       "packagesPath": "C:\\Users\\mau_a\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\obj\\",
+      "outputPath": "c:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11643,5 +11643,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché c:\\Users\\mau_a\\Desktop\\ProyBibFinalCopia\\obj\\BIBLIOTECA.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

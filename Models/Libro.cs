@@ -23,6 +23,5 @@ namespace BIBLIOTECA.Models
         public string editorial {get; set;}
         [Required]
         public int año_pub {get; set;}
-       
     }
 }
